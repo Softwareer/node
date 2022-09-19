@@ -34,6 +34,14 @@ const softwareer = new Softwareer("API_KEY");
 
 ```js
 (async () => {
+    console.log("---- Profile ----");
+    const profile = await softwareer.getProfile();
+    console.log(profile);
+
+    console.log("---- Socails ----");
+    const socails = await softwareer.getSocials();
+    console.log(socails);
+
     console.log("---- Posts ----");
     const posts = await softwareer.getPosts();
     console.log(posts);
@@ -47,13 +55,13 @@ const softwareer = new Softwareer("API_KEY");
     console.log(skills);
 
     console.log("---- Post ----");
-    const post = await softwareer.getPost('ID');
+    const post = await softwareer.getPost('');
     console.log(post);
     // const content = softwareer.convertBase64ToString(post.content);
     // console.log(content);
 
     console.log("---- Project ----");
-    const project = await softwareer.getProject('ID');
+    const project = await softwareer.getProject('');
     console.log(project);
 })();
 ```

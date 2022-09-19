@@ -1,6 +1,6 @@
 {
     "name": "@softwareer/node",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Create a blog easily for your project(s).",
     "main": "./src/index.js",
     "types": "./src/index.d.ts",

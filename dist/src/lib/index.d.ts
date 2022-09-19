@@ -6,5 +6,7 @@ export declare class SoftwareerNode {
     getProjects(page?: Number, limit?: Number): Promise<any>;
     getProject(id: string): Promise<any>;
     getSkills(): Promise<any>;
+    getProfile(): Promise<any>;
+    getSocials(): Promise<any>;
     convertBase64ToString(base64: string): string;
 }

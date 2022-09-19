@@ -88,6 +88,36 @@ export class SoftwareerNode {
         return response?.data || [];
     }
 
+    async getProfile() {
+        const response = await (await axios.get(`${config.baseUrl}/profile`, {
+            headers: {
+                Authorization: this.key
+            }
+        }).catch(err => {
+            throw new Error(err?.response?.data?.message || "Something went wrong!");
+        }))?.data || null;
+
+        if (!response) throw new Error("Key is not valid!");
+        if (!response.success) throw new Error(response.message);
+
+        return response?.data || [];
+    }
+
+    async getSocials() {
+        const response = await (await axios.get(`${config.baseUrl}/socials`, {
+            headers: {
+                Authorization: this.key
+            }
+        }).catch(err => {
+            throw new Error(err?.response?.data?.message || "Something went wrong!");
+        }))?.data || null;
+
+        if (!response) throw new Error("Key is not valid!");
+        if (!response.success) throw new Error(response.message);
+
+        return response?.data || [];
+    }
+
 
     public convertBase64ToString(base64: string) {
         return Buffer.from(base64, "base64").toString();
